@@ -1,27 +1,54 @@
 <div class="album py-5 bg-light">
     <div class="container">
-
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-            <div class="col" *ngFor="let item of productosService.productos">
-                {{item.imagen}}
-                <div class="card shadow-sm">
-                    <img src="{{item.imagen}}" alt="BurgerA">
-                    <div class="card-body">
-                        <p class="card-text">Nombre: {{item.nombre}}</p>
-                        <p class="card-text">Descripcion: {{item.descripcion}}</p>
-                        <p class="card-text">Precio: {{item.precio}}</p>
-                        <p class="card-text">Cantidad: {{item.cantidad}}</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Oferta</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                            </div>
-                            <small class="text-muted">10 Producto</small>
-                        </div>
-                    </div>
-                </div>
+        <label for=""> Ingrese Producto </label>
+        <form (ngsubmit)="subidaValores()"> 
+            <div class="mb-3">
+                <label for="c1" class="form-label">Codigo</label>
+                <input [(ngModel)]="codigo" name="codigo" type="text" class="form-control" id="c1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
-        </div>
+            <div class="mb-3">
+                <label for="n1" class="form-label">Nombre</label>
+                <input [(ngModel)]="nombre" name="nombre" type="text" class="form-control" id="n1">
+            </div>
+            <div class="mb-3">
+                <label for="p1" class="form-label">Precio</label>
+                <input [(ngModel)]="precio" name="precio" type="number" class="form-control" id="p1">
+            </div>
+            <div class="mb-3">
+                <label for="s1" class="form-label">Stock</label>
+                <input [(ngModel)]="stock" name="stock" type="number" class="form-control" id="s1">
+            </div>
+            <button type="submit" (click)="subidaValores()" class="btn btn-primary">Submit</button>
+
+        </form>
+
+        <table class="table table-primary ">
+            <thead>
+    
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Acción</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of arrayIds">
+                <!-- productosService.lista_productos['productos'] -->
+                <!-- *ngIf="item.nombre == buscado" -->
+    
+                <tr>
+                    <th scope="row">{{item + 1}}</th>
+                    <td>{{arrayCodigo[item]}}</td>
+                    <td> {{arrayNombre[item]}}</td>
+                    <td>$ {{arrayPrecio[item]}} </td>
+                    <td>{{arrayStock[item]}}</td>
+                    <td>  <button type="button" (click)="eliminarDeTabla(item)" class="btn btn-success">Eliminar</button> </td>
+                </tr>
+
+            </tbody>
+        </table>
     </div>
 </div>

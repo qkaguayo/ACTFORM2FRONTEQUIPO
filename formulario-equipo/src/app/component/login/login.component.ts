@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   }
   insertar():void{
 
+    this.Anuncio = "";
 
     if (this.email != null && this.fono !=null && this.nombre!=null){
       if(this.email.length != 0 || this.nombre.length != 0|| this.fono.length !=0){
@@ -42,12 +43,6 @@ export class LoginComponent implements OnInit {
         this.Anuncio = "Campo Vacios";
       }
     }
-
-
-
-
-
-    console.log(this.email, this.password);
 
   }
 }
