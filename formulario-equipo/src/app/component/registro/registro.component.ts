@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
   re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-  
+  nt= /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+
   Anuncio: string|null = null;
   nombre  : string|null = null;
   fono: string|null = null;
@@ -39,6 +40,12 @@ export class RegistroComponent implements OnInit {
       console.log("email correcto");
       }else{
         console.log("email incorrecto");
+      }
+
+      if (this.nt.test(fono1)){
+        console.log("numero correcto");
+      }else{
+        this.Anuncio=("numero incorrecto");
       }
     
     if(nombre1.length < 3 || fono1.length <4) {
