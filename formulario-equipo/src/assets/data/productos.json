@@ -1,0 +1,46 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "nombre": "Burger A",
+            "descripcion": "Rica Hamburguesa A, con ABC ingredientes",
+            "peso_Carne": 200,
+            "precio": 2000
+        },
+        {
+            "id": 2,
+            "nombre": "Burger B",
+            "descripcion": "Rica Hamburguesa B, con CSC ingredientes",
+            "peso_Carne": 250,
+            "precio": 1500
+        },
+        {
+            "id": 3,
+            "nombre": "Burger C",
+            "descripcion": "Rica Hamburguesa C, con CDDC ingredientes",
+            "peso_Carne": 300,
+            "precio": 6000
+        },
+        {
+            "id": 4,
+            "nombre": "Burger D",
+            "descripcion": "Rica Hamburguesa D, con CDDC ingredientes",
+            "peso_Carne": 200,
+            "precio": 2230
+        },
+        {
+            "id": 5,
+            "nombre": "Burger E",
+            "descripcion": "Rica Hamburguesa E, con AGDC ingredientes",
+            "peso_Carne": 200,
+            "precio": 3400
+        },
+        {
+            "id": 6,
+            "nombre": "Burger F",
+            "descripcion": "Rica Hamburguesa F, con ABDCEFG ingredientes",
+            "peso_Carne": 200,
+            "precio": 5400
+        }
+    ]
+}
