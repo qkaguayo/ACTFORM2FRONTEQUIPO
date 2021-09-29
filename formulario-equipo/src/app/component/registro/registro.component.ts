@@ -21,39 +21,34 @@ export class RegistroComponent implements OnInit {
   }
 
   insertar():void{
-    let nombre1 = String(this.nombre);
-    let fono1 = String(this.fono);
-    let email1 = String(this.email);
-  
+  this.Anuncio="";
 
-    if(nombre1.length == 0 || fono1.length == 0 || email1.length == 0 ){
-      console.log("Espacio en blanco encontrado");
-      this.Anuncio = "Campo Vacios";
-    }
+    if (this.email != null && this.fono !=null && this.nombre!=null){
+      if(this.email.length != 0 || this.nombre.length != 0|| this.fono.length !=0){
+        if(this.email.search(" ") >= 0 || this.nombre.search(" ") >= 0|| this.nombre.search(" ") >= 0){
+          console.log("Espacio en blanco encontrado");
 
-    if(nombre1.search(" ") >= 0 || fono1.search(" ") >= 0 || email1.search(" ") >= 0 ){
-      console.log("Espacio en blanco encontrado");
-      this.Anuncio = "Carácteres vacios encontrados";
-    }
-
-    if(this.re.test(email1)){
-      console.log("email correcto");
+          this.Anuncio = "Carácteres vacios encontrados";
+          if(this.re.test(this.email)){
+            if (this.nt.test(this.fono)){
+              console.log("numero correcto");
+            }else{
+              this.Anuncio=("numero incorrecto");
+            }
+            console.log("mail correcto");
+              }else{
+                console.log("mail incorrecto");
+                this.Anuncio = "Correo incorrecto";
+              }
+        }
       }else{
-        console.log("email incorrecto");
+        console.log("Espacio en blanco encontrado");
+        this.Anuncio = "Campo Vacios";
       }
-
-      if (this.nt.test(fono1)){
-        console.log("numero correcto");
-      }else{
-        this.Anuncio=("numero incorrecto");
-      }
-    
-    if(nombre1.length < 3 || fono1.length <4) {
-      console.log("campo muy corto encontrado");
-      this.Anuncio = "Apellido/nombre muy corto";
     }
 
-    console.log("metodo insertar1");
+
+    console.log("metodo insertar");
     console.log(this.nombre +" "+this.fono+" "+this.email);
   }
 }
