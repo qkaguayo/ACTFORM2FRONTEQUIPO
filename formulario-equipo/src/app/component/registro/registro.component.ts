@@ -9,7 +9,7 @@ export class RegistroComponent implements OnInit {
   re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
   nt = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/im;
 
-  Anuncio: string | null = "anuncio";
+  Anuncio: string | null = "";
   nombre: string | null = null;
   fono: string | null = null;
   email: string | null = null;
@@ -25,7 +25,6 @@ export class RegistroComponent implements OnInit {
 
     if (this.email != null && this.fono != null && this.nombre != null) {
       if (this.email.length != 0 || this.nombre.length != 0 || this.fono.length != 0) {
-        this.Anuncio = "Campos vacios encontrados";
         if (this.email.search(" ") >= 0 || this.nombre.search(" ") >= 0 || this.fono.search(" ") >= 0) {
           console.log("Espacio en blanco encontrado");
           this.Anuncio = "Carácteres vacios encontrados";
@@ -43,6 +42,8 @@ export class RegistroComponent implements OnInit {
             this.Anuncio = "Correo incorrecto";
           }
         }
+      } else {
+        this.Anuncio = "Campos vacios encontrados";
       }
     } else {
       console.log("Espacio en blanco encontrado");

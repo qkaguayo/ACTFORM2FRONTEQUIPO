@@ -1,7 +1,7 @@
 <div class="album py-5 bg-light">
     <div class="container">
         <label id="h3d"for=""> Ingrese Producto </label>
-        <form (ngsubmit)="subidaValores()"> 
+        <form (ngSubmit)="subidaValores()"> 
             <div class="mb-3">
                 <label for="c1" class="form-label">Codigo</label>
                 <input [(ngModel)]="codigo" name="codigo" type="text" class="form-control" id="c1" aria-describedby="emailHelp">
@@ -18,13 +18,12 @@
                 <label for="s1" class="form-label">Stock</label>
                 <input [(ngModel)]="stock" name="stock" type="number" class="form-control" id="s1">
             </div>
-            <button type="submit" (click)="subidaValores()" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
 
         </form>
         <label id="h3d"for=""> Productos Ingresados </label>
         <table class="table table-primary ">
-            <thead>
-    
+            <thead> 
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Codigo</th>
