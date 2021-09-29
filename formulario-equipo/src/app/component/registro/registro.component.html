@@ -1,20 +1,27 @@
-<form (ngSubmit)="insertar()">
-    <h2>Registrate</h2>
-    <div class="mb-3">
-        <label for="nombre" class="form-label">Nombre</label>
-        <input [(ngModel)]="nombre" name="nombre" type="nombre" class="form-control" id="nombre" aria-describedby="nombreHelp">
-        <div id="nombreHelp" class="form-text">Nunca compartiremos su nombre con nadie más.</div>
-    </div>
-    <div class="mb-3">
-        <label for="email" class="form-label">Correo Electronico</label>
-        <input [(ngModel)]="email" name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
-    </div>
-    <div class="mb-3">
-        <label for="text" class="form-label">telefono</label>
-        <input [(ngModel)]="fono" name="fono" type="text" class="form-control" id="password">
-    </div>
-    <button type="submit" class="btn btn-success">Ingresar</button>
-</form>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <form (ngSubmit)="insertar()">
+            <h2>Registrate</h2>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input [(ngModel)]="nombre" name="nombre" type="nombre" class="form-control" id="nombre"
+                    aria-describedby="nombreHelp">
+                <div id="nombreHelp" class="form-text">Nunca compartiremos su nombre con nadie más.</div>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo Electronico</label>
+                <input [(ngModel)]="email" name="email" type="email" class="form-control" id="email"
+                    aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
+            </div>
+            <div class="mb-3">
+                <label for="text" class="form-label">telefono</label>
+                <input [(ngModel)]="fono" name="fono" type="text" class="form-control" id="password">
+            </div>
+            <button type="submit" class="btn btn-success">Ingresar</button>
+        </form>
 
-<br>
+        {{Anuncio}}
+        <br>
+    </div>
+</div>
