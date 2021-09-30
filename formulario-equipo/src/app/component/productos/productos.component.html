@@ -2,10 +2,11 @@
     <div class="container">
         <label for=""> Ingrese Producto </label>
         <form (ngsubmit)="subidaValores()">
+        <label id="h3d"for=""> Ingrese Producto </label>
+        <form (ngsubmit)="subidaValores()"> 
             <div class="mb-3">
                 <label for="c1" class="form-label">Codigo</label>
                 <input [(ngModel)]="codigo" name="codigo" type="text" class="form-control" id="c1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
                 <label for="n1" class="form-label">Nombre</label>
@@ -22,7 +23,7 @@
             <button type="submit" (click)="subidaValores()" class="btn btn-primary">Submit</button>
 
         </form>
-
+        <label id="h3d"for=""> Productos Ingresados </label>
         <table class="table table-primary ">
             <thead>
 
@@ -39,6 +40,7 @@
                 <!-- productosService.lista_productos['productos'] -->
                 <!-- *ngIf="item.nombre == buscado" -->
 
+            <tbody *ngFor="let item of arrayIds">    
                 <tr>
                     <th scope="row">{{item + 1}}</th>
                     <td>{{arrayCodigo[item]}}</td>
